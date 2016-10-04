@@ -38,7 +38,7 @@ std::vector<std::string> receiveCommandFromUser()
 int main()
 {
     std::vector<std::string> tokenizedCommand(receiveCommandFromUser());
-    std::string receivedCommand = tokenizedCommand[idOfcommand];
+    std::string receivedCommand(tokenizedCommand[idOfcommand]);
 
     if (receivedCommand == createDefLiteral)
     {

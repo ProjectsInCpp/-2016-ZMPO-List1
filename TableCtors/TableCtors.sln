@@ -7,6 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TableCtors", "TableCtors\Ta
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3D401D9F-7CDC-4E06-9257-9D9FAB6E0E4E}"
 	ProjectSection(SolutionItems) = preProject
+		HowParseVals.txt = HowParseVals.txt
 		HowToBoostTokenizer.txt = HowToBoostTokenizer.txt
 	EndProjectSection
 EndProject
