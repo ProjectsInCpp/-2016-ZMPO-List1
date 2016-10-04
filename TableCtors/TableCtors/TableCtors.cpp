@@ -10,14 +10,37 @@
 #include <boost/tokenizer.hpp>
 
 #include "Interface.h"
-#include "Utils.h"
-#include "Stub.h"
+
+namespace
+{
+constexpr char* SEPARATOR = " ";
+constexpr int idOfcommand = 0;
+constexpr char* createDefLiteral = "createDef";
+
+using tokenizer = boost::tokenizer<boost::char_separator<char>>;
+
+std::vector<std::string> receiveCommandFromUser()
+{
+    std::cout << "Pass command" << std::endl;
+    std::cout << "$ ";
+
+    std::string inChain;
+    getline(std::cin, inChain);
+
+    boost::char_separator<char> sep(SEPARATOR);
+    tokenizer tokens(inChain, sep);
+    std::vector<std::string> retVal(tokens.begin(), tokens.end());
+
+    return std::move(retVal);
+}
+}
 
 int main()
 {
-    std::vector<std::string> tokenizedCommand(stub::createDef);
-    std::string receivedCommand = tokenizedCommand[messageId::command];
-    if (receivedCommand == messageLiterals::createDef)
+    std::vector<std::string> tokenizedCommand(receiveCommandFromUser());
+    std::string receivedCommand = tokenizedCommand[idOfcommand];
+
+    if (receivedCommand == createDefLiteral)
     {
         std::cout << "Stworze tablice";
     }
